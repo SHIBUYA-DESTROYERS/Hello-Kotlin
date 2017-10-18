@@ -7,9 +7,9 @@ interface Bucket {
     var quantity: Int
 }
 
-fun createBucket(_capacity: Int): Bucket = object : Bucket {
+class BucketImpl(_capacity: Int) : Bucket {
 
-    override val capacity = _capacity
+    override val capacity: Int = _capacity
 
     override var quantity: Int = 0
 
@@ -34,8 +34,8 @@ fun createBucket(_capacity: Int): Bucket = object : Bucket {
 }
 
 fun main(args: Array<String>) {
-    val bucket1 = createBucket(7)
-    val bucket2 = createBucket(4)
+    val bucket1: Bucket = BucketImpl(7)
+    val bucket2: Bucket = BucketImpl(4)
 
     bucket1.fill()
     bucket1.pourTo(bucket2)
