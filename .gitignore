@@ -1,0 +1,6 @@
+
+.gitignore
+.idea/
+HelloKotlin.iml
+out/production/HelloKotlin/META-INF/
+src/
