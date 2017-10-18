@@ -9,7 +9,7 @@ interface Bucket {
 }
 
 fun createBucket(capacity: Int): Bucket = object : Bucket {
-    val _quantity: Int = 0
+    var _quantity: Int = 0
 
     override fun fill() {
         setQuantity(getCapacity())
@@ -40,37 +40,12 @@ fun createBucket(capacity: Int): Bucket = object : Bucket {
 }
 
 fun main(args: Array<String>) {
-    val bucket = object: Bucket {
-        // バケツの容量
-        val capacity: Int = 5
+    val bucket1 = createBucket(7)
+    val bucket2 = createBucket(4)
 
-        // はいっている水の量
-        var quantity: Int = 0
+    bucket1.fill()
+    bucket1.pourTo(bucket2)
 
-        // バケツを水で満たす
-        fun fill() {
-            quantity = capacity
-        }
-
-        // 排水する
-        fun drainAway() {
-            quantity = 0
-        }
-
-        // はいっている水の量を出力
-        fun printQuantity() {
-            println(quantity)
-        }
-
-        // 別のバケツに移す
-        fun pourTo(that: Bucket) {
-            // 未実装
-        }
-    }
-
-    bucket.printQuantity()
-    bucket.fill()
-    bucket.printQuantity()
-    bucket.drainAway()
-    bucket.printQuantity()
+    println(bucket1.getQuantity())
+    println(bucket2.getQuantity())
 }
