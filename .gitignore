@@ -59,11 +59,7 @@ fabric.properties
 # Ignores the whole idea folder
 # See https://github.com/joeblau/gitignore.io/issues/186 and https://github.com/joeblau/gitignore.io/issues/360
 
-.idea/
-
 # End of https://www.gitignore.io/api/intellij+all
 
-.gitignore
 HelloKotlin.iml
-out/
 lib/
